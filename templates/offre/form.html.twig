@@ -1,0 +1,36 @@
+
+{{ form_start(form,{'attr':{'novalidate': 'novalidate'}}) }}
+
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <form action="#" class="contact__form">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.nomOffre, 'Nom offre'|trans, {'label_attr' : {'class': '' }}) }}
+                            {{ form_widget(form.nomOffre) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.dateDebutOffre, 'Starts'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.dateDebutOffre) }}
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.descOffre, 'Description'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.descOffre) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.dateFinOffre, 'Ends'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.dateFinOffre) }}
+                        </div>
+                    </div>
+                    <button type="submit" class="site-btn">{{ button_label|default('Save') }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+{{ form_end(form) }}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Nos Voyages Virtuelles' %}
+{% block home %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
+            <h1>Tous nos voyages virtuelles: </h1>
+            <div class="row">
+                {% for voyageVirtuelle in voyageVirtuelles %}
+                    <div class="col-lg-8">
+                        <h1> <span>
+                                 <div class="btns">
+                                 {{ voyageVirtuelle.nomVille }}
+                                </div>
+                             </span></h1>
+
+                        <iframe width="1024"
+                                height="576"
+                                src="{{ voyageVirtuelle.lienVideo }}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section><!-- End Hero -->
+{% endblock %}
+
+
+
+
+{% block body %}
+
+{% endblock %}

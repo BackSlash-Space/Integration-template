@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title 'Happy Trip !' %}
+
+{% block home %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
+            <div class="row">
+                {% for destination in destinations %}
+                <div class="col-lg-8">
+                    <h1> <span>
+                                 <div class="btns">
+                                  <a href="{{ path('destination.show' , {id: destination.id, slug: destination.slug}) }}">{{ destination.nomDes }}</a>
+                                </div>
+                             </span></h1>
+
+
+
+                </div>
+                {% endfor %}
+                <div class="col-lg-4 d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="venobox play-btn" data-vbtype="video" data-autoplay="true"></a>
+                </div>
+
+            </div>
+        </div>
+    </section><!-- End Hero -->
+{% endblock %}
+
+
+
+{% block body %}
+
+{% endblock %}

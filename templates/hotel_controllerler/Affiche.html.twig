@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HappyTrip{% endblock %}
+
+{% block body %}
+    <style>
+
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    {#  <div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/WebSymf2/src/Controller/LoginController.php'|file_link(0) }}">src/Controller/LoginController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/wamp64/www/WebSymf2/templates/login/index.html.twig'|file_link(0) }}">templates/login/index.html.twig</a></code></li>
+    </ul>
+</div> #}
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+
+    <h1> Liste des Client</h1>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Localisation</th>
+            <th>Etoile</th>
+            <th>Image</th>
+            <th>Prix</th>
+            <th>Option</th>
+
+
+        </tr>
+
+        <tr {% for h in Hotel %}>
+            <td>{{ h.id }}</td>
+            <td>{{ h.nom }}</td>
+            <td>{{ h.localisation }}</td>
+            <td>{{ h.etoile }}</td>
+            <td>{{ h.prix}}</td>
+            <td>{{ h.otion}}</td>
+            <td><a href="{{ path('d',{id:h.id}) }}">Delete</a></td>
+
+            <td><a href="{{ path('U',{'id':h.id}) }}">Update</a></td>
+
+
+
+        </tr {% endfor %}>
+<tr> <td><a href="{{ path('AH',{'id':h.id}) }}">Ajouter</a></td></tr>
+    </table>
+    </body>
+    </html>
+{% endblock %}

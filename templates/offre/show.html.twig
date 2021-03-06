@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre{% endblock %}
+
+{% block body %}
+    <h1>Offre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr style="color: white">
+                <th>Id</th>
+                <td>{{ offre.id }}</td>
+            </tr>
+            <tr style="color: white">
+                <th>NomOffre</th>
+                <td>{{ offre.nomOffre }}</td>
+            </tr>
+            <tr style="color: white">
+                <th>DateDebutOffre</th>
+                <td>{{ offre.dateDebutOffre }}</td>
+            </tr>
+            <tr style="color: white">
+                <th>DateFinOffre</th>
+                <td>{{ offre.dateFinOffre }}</td>
+            </tr>
+            <tr>
+                <th>DescOffre</th>
+                <td>{{ offre.descOffre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('offre_index') }}">back to list</a>
+
+    <a href="{{ path('offre_edit', {'id': offre.id}) }}">edit</a>
+
+    {{ include('offre/delete_form.html.twig') }}
+{% endblock %}
